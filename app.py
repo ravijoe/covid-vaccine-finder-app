@@ -20,13 +20,10 @@ def main():
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
-    POST_CODE = st.text_input("enter pin code :")
-    age = st.number_input("enter age :")
-    print(age)
-    age=int(age)
+    POST_CODE = st.text_input("enter pin code :- ")
     result=None
     if st.button("Predict"):
-        result = fetch(POST_CODE,age)
+        result = fetch(POST_CODE)
     st.success('The output is ')
     st.dataframe(result)
     if st.button("About"):
