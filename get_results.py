@@ -27,18 +27,17 @@ def fetch(POST_CODE,age):
                 if (print_flag == 'y' or print_flag == 'Y'):
                     for center in resp_json["centers"]:
                         for session in center["sessions"]:
-                            if session["min_age_limit"] <= age:
-                                print("\t", center["name"])
-                                print("\t", center["block_name"])
-                                print("\t Price: ", center["fee_type"])
-                                print("\t Available Capacity: ", session["available_capacity"])
-                                if (session["vaccine"] != ''):
-                                    print("\t Vaccine: ", session["vaccine"])
-                                print("\n\n")
+                            print("\t", center["name"])
+                            print("\t", center["block_name"])
+                            print("\t Price: ", center["fee_type"])
+                            print("\t Available Capacity: ", session["available_capacity"])
+                            if (session["vaccine"] != ''):
+                                print("\t Vaccine: ", session["vaccine"])
+                            print("\n\n")
 
-                                data.append([center["name"],center["block_name"],center["fee_type"],
-                                             center['state_name'],center['district_name'],
-                                             session["available_capacity"],session['vaccine'],INP_DATE])
+                            data.append([center["name"],center["block_name"],center["fee_type"],
+                                         center['state_name'],center['district_name'],
+                                         session["available_capacity"],session['vaccine'],INP_DATE])
 
             else:
                 print("No available slots on {}".format(INP_DATE))
