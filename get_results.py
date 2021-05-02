@@ -36,7 +36,7 @@ def fetch(POST_CODE):
                             print("\n\n")
 
                             data.append([center["name"],center["block_name"],center["fee_type"],
-                                         center['state_name'],center['district_name'],
+                                         center['state_name'],center['district_name'],center['center_id'],
                                          session["available_capacity"],session['vaccine'],INP_DATE])
 
             else:
@@ -48,7 +48,8 @@ def fetch(POST_CODE):
     df['fee type '] = [i[2] for i in data]
     df['state name']=[i[3] for i in data]
     df['district name']=[i[4] for i in data]
-    df['available capacity'] = [i[5] for i in data]
-    df['vaccine type']=[i[6] for i in data]
-    df['date']=[i[7] for i in data]
+    df['center id'] = [i[5] for i in data]
+    df['available capacity'] = [i[6] for i in data]
+    df['vaccine type']=[i[7] for i in data]
+    df['date']=[i[8] for i in data]
     return df
