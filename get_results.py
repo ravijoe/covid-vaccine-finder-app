@@ -8,7 +8,7 @@ def fetch(POST_CODE,age):
     # age = 52
     # Print details flag
     print_flag = 'Y'
-    numdays = 5
+    numdays = 7
     data=[]
     base = datetime.datetime.today()
     date_list = [base + datetime.timedelta(days=x) for x in range(numdays)]
