@@ -3,7 +3,7 @@ import datetime
 import json
 import pandas as pd
 
-def fetch(POST_CODE,age):
+def fetch(POST_CODE):
     # POST_CODE = "160036"
     # age = 52
     # Print details flag
